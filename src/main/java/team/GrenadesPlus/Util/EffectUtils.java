@@ -15,7 +15,6 @@ import team.ApiPlus.API.Effect.LocationEffect;
 import team.ApiPlus.API.Effect.SphereEffect;
 import team.ApiPlus.API.Effect.Default.ExplosionEffect;
 import team.ApiPlus.API.Effect.Default.MoveEffect;
-import team.ApiPlus.API.Property.NumberProperty;
 import team.ApiPlus.Util.Utils;
 import team.GrenadesPlus.Effects.EffectTargetImpl;
 
@@ -71,7 +70,7 @@ public class EffectUtils {
 	}
 	
 	public static void performLocationEffect(LocationEffect e, Location grenadier, Location ex) {
-		int radius = ((NumberProperty)(((EffectTargetImpl)e.getEffectTarget()).getProperty("RADIUS"))).getValue().intValue();
+		int radius = (Integer)(((EffectTargetImpl)e.getEffectTarget()).getProperty("RADIUS"));
 		Location[] switched = switchLocation(e, new Location[]{grenadier}, getTargetLocations(getTargetEntities(ex, radius)), new Location[]{ex});
 		boolean isdenied = false;
 		if(e instanceof ExplosionEffect){
@@ -86,7 +85,7 @@ public class EffectUtils {
 	}
 
 	public static void performEntityEffect(EntityEffect e, LivingEntity grenadier, Location ex) {
-		int radius = ((NumberProperty)(((EffectTargetImpl)e.getEffectTarget()).getProperty("RADIUS"))).getValue().intValue();
+		int radius = (Integer)((EffectTargetImpl)e.getEffectTarget()).getProperty("RADIUS");
 		List<LivingEntity> targets = Arrays.asList(getTargetEntities(ex, radius));
 		LivingEntity[] les = switchEntity(e, new LivingEntity[]{grenadier}, (LivingEntity[]) targets.toArray());
 		if(e instanceof MoveEffect){

@@ -11,7 +11,6 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import team.ApiPlus.API.EffectHolder;
 import team.ApiPlus.API.Effect.Effect;
 import team.ApiPlus.API.Effect.EffectType;
-import team.ApiPlus.API.Property.NumberProperty;
 import team.ApiPlus.Manager.EffectManager;
 import team.GrenadesPlus.Block.Placeable;
 import team.GrenadesPlus.Controls.KeyType;
@@ -214,16 +213,16 @@ public class ConfigParser {
     		throw new Exception("Argument 'radius' missing!");
     	switch(efftar.getType()){
 	    	case TARGETLOCATION:
-	    		efftar.addProperty("RADIUS", new NumberProperty((Integer)searchKeyInMapList(args, "radius").get("radius")));
+	    		efftar.addProperty("RADIUS", searchKeyInMapList(args, "radius").get("radius"));
 	    		break;
 	    	case EXPLOSIVELOCATION:
-	    		efftar.addProperty("RADIUS", new NumberProperty((Integer)searchKeyInMapList(args, "radius").get("radius")));
+	    		efftar.addProperty("RADIUS", searchKeyInMapList(args, "radius").get("radius"));
 	    		break;
 	    	case GRENADIERLOCATION:
-	    		efftar.addProperty("RADIUS", new NumberProperty((Integer)searchKeyInMapList(args, "radius").get("radius")));
+	    		efftar.addProperty("RADIUS", searchKeyInMapList(args, "radius").get("radius"));
 	    		break;
 	    	case TARGETENTITY:
-	    		efftar.addProperty("RADIUS", new NumberProperty((Integer)searchKeyInMapList(args, "radius").get("radius")));
+	    		efftar.addProperty("RADIUS", searchKeyInMapList(args, "radius").get("radius"));
 	    		break;
 		case GRENADIER:
 			break;
