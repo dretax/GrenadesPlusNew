@@ -16,7 +16,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
-
 import team.ApiPlus.API.PluginPlus;
 import team.ApiPlus.API.Type.BlockType;
 import team.ApiPlus.API.Type.ItemType;
@@ -41,8 +40,7 @@ import com.griefcraft.lwc.LWC;
 import com.griefcraft.lwc.LWCPlugin;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
-public class GrenadesPlus extends PluginPlus {
-	
+public class GrenadesPlus extends PluginPlus{
 	public static final String PRE = "[Grenades+] ";
 	public static final Logger log = Bukkit.getLogger();
 	
